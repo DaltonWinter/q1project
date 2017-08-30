@@ -1,36 +1,57 @@
+var DIRECTIONSDISPLAY;
+var DIRECTIONSSERVICE;
 function initMap() {
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-  var directionsService = new google.maps.DirectionsService;
+   DIRECTIONSDISPLAY = new google.maps.DirectionsRenderer;
+   DIRECTIONSSERVICE = new google.maps.DirectionsService;
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 7,
-    center: {lat: 41.85, lng: -87.65}
+    center: {
+      lat: 39.73,
+      lng: -104.99
+    }
+
+
   });
-  directionsDisplay.setMap(map);
-  directionsDisplay.setPanel(document.getElementById('right-panel'));
+  DIRECTIONSDISPLAY.setMap(map);
+  DIRECTIONSDISPLAY.setPanel(document.getElementById('right-panel'));
 
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-  var onChangeHandler = function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  };
-  document.getElementById('start').addEventListener('change', onChangeHandler);
-  document.getElementById('end').addEventListener('change', onChangeHandler);
 }
+$(document).ready(function() {
+  $('select').material_select();
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+
+});
+// directionsDisplay.setMap(map);
+// directionsDisplay.setPanel(document.getElementById('right-panel'));
+//
+// var control = document.getElementById('floating-panel');
+// control.style.display = 'block';
+// map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+var onChangeHandler = function() {
+  console.log("change handler")
+  calculateAndDisplayRoute();
+};
+$('#start').change(onChangeHandler);
+$('#end').change(onChangeHandler);
+
+function calculateAndDisplayRoute() {
   var start = document.getElementById('start').value;
-  
+
   var end = document.getElementById('end').value;
-  directionsService.route({
+  DIRECTIONSSERVICE.route({
     origin: start,
     destination: end,
     travelMode: 'DRIVING'
   }, function(response, status) {
     if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-     } else {
+      DIRECTIONSDISPLAY.setDirections(response);
+    } else {
       window.alert('Directions request failed due to ' + status);
     }
   });

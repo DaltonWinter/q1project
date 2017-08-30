@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS  -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="q1proj.css">
+  <meta charset="utf-8">
+  <title>Day Travels in Denver</title>
+  <header>
+    <nav class="nav-extended">
+      <div style="background-color: saddlebrown" class="nav-wrapper">
+        <a style="color: #E52800" href="#" class="brand-logo">Five Daytrips From Denver</a>
+      </div>
+      <div class="nav-content">
+        <ul style="background-color: saddlebrown" class="tabs tabs-transparent">
+          <li class="tab"><a href="index.html" target="_self">Home</a></li>
+          <li class="tab"><a href="aspen.html" target="_self">Aspen</a></li>
+          <li class="tab"><a href="#test2">Breckinridge</a></li>
+          <li class="tab"><a href="#test3">Garden Of The Gods</a></li>
+          <li class="tab"><a href="#test4">Red Rocks</a></li>
+          <li class="tab"><a href="#test5">Estes Park</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</head>
+
+<body>
+  <!-- <header>
+      <nav class="nav-extended">
+        <div style="background-color: saddlebrown" class="nav-wrapper">
+          <a style="color: #E52800" href="#" class="brand-logo">Five Daytrips From Denver</a>
+        </div>
+        <div class="nav-content">
+          <ul style="background-color: saddlebrown" class="tabs tabs-transparent">
+            <li class="tab"><a href="index.html" target="_self">Home</a></li>
+            <li class="tab"><a href="aspen.html" target="_self">Aspen</a></li>
+            <li class="tab"><a href="#test2">Breckinridge</a></li>
+            <li class="tab"><a href="#test3">Garden Of The Gods</a></li>
+            <li class="tab"><a href="#test4">Red Rocks</a></li>
+            <li class="tab"><a href="#test5">Estes Park</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header> -->
+  <div id="floating-panel">
+    <div class="input-field">
+      <strong>Start:</strong>
+      <select id="start">
+    <option value="denver, co">Denver</option>
+  </select>
+    </div>
+    <div class="input-field">
+      <strong>End:</strong>
+      <select id="end">
+    <option value=""></option>
+    <option value="aspen, co">Aspen</option>
+  </select>
+    </div>
+  </div>
+  <div id="right-panel"></div>
+  <div id="map"></div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="q1proj.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCneqp5V66k5fcQJ02AkeKxzH55OujGiyM&callback=initMap">
+  </script>
+</body>
+
+</html>
