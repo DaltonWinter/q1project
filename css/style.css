@@ -19,17 +19,17 @@ p {
   color: #26a69a;
 }
 
-.parallax-container {
+/*.parallax-container {
   min-height: 380px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
+}*/
+  /*.parallax-container .section {
     width: 100%;
-  }
+  }*/
 
-@media only screen and (max-width : 992px) {
+/*@media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -43,7 +43,7 @@ p {
   #index-banner .section {
     top: 0;
   }
-}
+}*/
 
 .icon-block {
   padding: 0 15px;
@@ -59,12 +59,16 @@ p {
   left: auto;
 
 }
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
-  main {
-    flex: 1 0 auto;
-  }
+/*main {
+  background-image: url(colorfulco.jpg);
+}*/
+
+main {
+/*height: 100%;*/
+background-image: url(../colorfulco.jpg);
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
